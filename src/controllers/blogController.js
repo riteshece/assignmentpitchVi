@@ -2,12 +2,12 @@ const { query } = require("express");
 const authorModel = require("../models/authorModel");
 const blogModel = require("../models/blogModel");
 
-
-const createBlog = async (req, res) => {
+//create blog
+const createBlog = async function (req, res) {
   try {
     if (Object.keys(req.body).length != 0) {
       let aId = req.body.authorId;
-      let author = await authorModel.findById(aId);
+      let author = await authorModel.findById(Id);
       if (!author) {
         return res.status(404).send("Invalid Author ID!");
       }
@@ -21,6 +21,7 @@ const createBlog = async (req, res) => {
     return res.status(500).json({ status: false, error: error.message });
   }
 };
+//getAllBlogs
 
 const getBlogs = async (req, res) => {
   try {
@@ -32,6 +33,7 @@ const getBlogs = async (req, res) => {
     return res.status(500).json({ status: false, error: error.message });
   }
 };
+// getParticularBlogs
 
 const updateBlog = async (req, res) => {
   try {
@@ -59,6 +61,7 @@ const updateBlog = async (req, res) => {
     res.status(500).json({ msg: "Error", Error: error.message });
   }
 };
+//getDeleteByID
 
 const deleteById = async (req, res) => {
   try {
@@ -77,6 +80,7 @@ const deleteById = async (req, res) => {
     res.status(500).json({ msg: "Error", Error: error.message });
   }
 };
+//getDeleteById
 
 const deleteByQuery = async (req, res) => {
     try {
@@ -92,14 +96,6 @@ const deleteByQuery = async (req, res) => {
     } catch (error) {
         res.status(500).json({ msg: "Error", Error: error.message });
     }
-}
-
-
-module.exports = {
-  createBlog,
-  getBlogs,
-  updateBlog,
-  deleteById,
-  deleteByQuery,
-  
 };
+module.exports = {createBlog,getBlogs,updateBlog,deleteById,deleteByQuery,};
+

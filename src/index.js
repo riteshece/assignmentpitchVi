@@ -26,17 +26,5 @@ app.listen(process.env.PORT || 3000, function () {
 
 
 
-// let blogID = req.body; //622f3340190388d4d8ad3adc
-// if(!blogID){
-//     res.s
-// }
-// let data = await blogModel.find({isDeleted: false},{isPublished: true})
 
-// let result = [];
-// for (let i = 0; i < len; i++) {
-//     if (blogFound[i].isDeleted == false && blogFound[i].isPublished == true) {
-//       arr.push(blogFound[i]);
-//     } else {
-//       continue;
-//     }
-//   }
+
