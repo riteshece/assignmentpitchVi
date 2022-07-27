@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const route = require('./routes/route');
 const mongoose = require('mongoose');
-const blogModel = require('./models/blogModel');
+
 
 
 
@@ -11,6 +11,10 @@ const blogModel = require('./models/blogModel');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', route);
+app.post('/',function ritesh(req,res){
+    res.send("sumit gupta")
+    
+})
 
 mongoose.connect("mongodb+srv://ratneshnath:RATNESh99@cluster0.x9keh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
     useNewUrlParser: true
